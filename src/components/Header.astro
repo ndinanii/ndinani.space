@@ -38,7 +38,7 @@ const { pathname } = Astro.url
             <ul class="hidden md:flex">
                 {links.map(item => ( 
                     <li class="border-l-2 border-black p-3 py-4">
-                        <a href={item.path} target={item.target} class="whitespace-nowrap relative flex items-center before:absolute before:left-0 before:bottom-1 before:h-[8px] before:w-0 before:bg-[var(--yellow)] before:transition-all before:duration-300 hover:before:w-full">
+                        <a href={item.path} target={item.target} class="whitespace-nowrap relative flex items-center before:absolute before:left-0 before:bottom-1 before:h-2 before:w-0 before:bg-(--yellow) before:transition-all before:duration-300 hover:before:w-full">
                             <span class="relative z-5">{item.name} {pathname == item.path ? '//' : ''}</span>
                         </a>
                     </li>
