@@ -10,6 +10,7 @@ import svgString from '../assets/string.svg'
 
 import { author, buy } from '../sample'
 
+const profileImage = '/profile.jpg'
 ---
 
 
@@ -46,7 +47,7 @@ import { author, buy } from '../sample'
             <img src="/cloud-weather.svg" width="40" alt="cloud" class="absolute top-12 -left-2 z-10" />   
             <img src="/cloud-weather.svg" width="35" alt="cloud" class="absolute -top-4 -right-2 z-10" />             
           
-             <div id="me" class="w-full h-[260px] border-2"></div>
+             <div id="me" class="w-full h-[260px] border-2" style={`background-image: url('${profileImage}'); background-position: center; background-size: cover;`}></div>
              <Bars />
           </div>
         </div>
@@ -56,12 +57,3 @@ import { author, buy } from '../sample'
 
     <img src="/cloud-icon.svg" alt="cloud" width="50" class="absolute -bottom-4" />
   </section>
-
-
-  <style>
-    #me{
-     background-image: url('/profile.jpg');
-     background-position: center;
-     background-size: cover;
-    }
-   </style>
