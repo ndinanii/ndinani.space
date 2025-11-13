@@ -32,9 +32,9 @@ const { pathname } = Astro.url
                     <img src={logoStar.src} alt="logo" width="26" /> {author.nickname}
                 </a>
             </div>
-            <a href="#" class="flex md:hidden" id="menu-open">
+            <button type="button" id="menu-open" class="flex md:hidden cursor-pointer p-2 -mr-2" aria-label="Open menu">
                 <i class="ri-menu-2-line text-2xl"></i>
-            </a>
+            </button>
             <ul class="hidden md:flex">
                 {links.map(item => ( 
                     <li class="border-l-2 border-black p-3 py-4">
@@ -48,12 +48,12 @@ const { pathname } = Astro.url
     </div>
   </header>
 
-  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-full" id="menu-content">
+  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-50 p-3 transition-all duration-300 -translate-x-full" id="menu-content">
     <div class="flex p-6">
         <h3 class="flex-1 font-bold uppercase">Menu</h3>
-        <a href="#" id="menu-close">               
+        <button type="button" id="menu-close" class="cursor-pointer" aria-label="Close menu">               
            <i class="ri-close-line text-3xl"></i>
-        </a>
+        </button>
     </div>
     <ul class="flex flex-col justify-center items-center gap-4 md:hidden">
         {links.map(item => ( 
@@ -69,26 +69,40 @@ const { pathname } = Astro.url
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const menuContent = document.querySelector('#menu-content') 
-    const menuOpen = document.querySelector('#menu-open') 
-    const menuClose = document.querySelector('#menu-close') 
+    const menuContent = document.querySelector('#menu-content') as HTMLElement | null
+    const menuOpen = document.querySelector('#menu-open') as HTMLElement | null
+    const menuClose = document.querySelector('#menu-close') as HTMLElement | null
 
+    if (!menuContent || !menuOpen || !menuClose) return
 
-    menuOpen?.addEventListener('click', (e) => {
+    menuOpen.addEventListener('click', (e) => {
         e.preventDefault()
-        menuContent?.classList.remove('-translate-x-[100%]')
+        e.stopPropagation()
+        menuContent.classList.remove('-translate-x-full')
+        document.body.style.overflow = 'hidden' // Prevent scrolling when menu is open
     })
 
-    menuClose?.addEventListener('click', (e) => {
+    menuClose.addEventListener('click', (e) => {
         e.preventDefault()
-        menuContent?.classList.add('-translate-x-[100%]')
+        e.stopPropagation()
+        menuContent.classList.add('-translate-x-full')
+        document.body.style.overflow = '' // Restore scrolling
     })
 
-
-    menuContent?.querySelectorAll('li a').forEach(item => {
-        item.addEventListener('click', (e) => {
-            menuContent?.classList.add('-translate-x-[100%]')
+    // Close menu when clicking on a link
+    menuContent.querySelectorAll('li a').forEach(item => {
+        item.addEventListener('click', () => {
+            menuContent.classList.add('-translate-x-full')
+            document.body.style.overflow = ''
         })
+    })
+
+    // Close menu when clicking outside (on the overlay area)
+    menuContent.addEventListener('click', (e) => {
+        if (e.target === menuContent) {
+            menuContent.classList.add('-translate-x-full')
+            document.body.style.overflow = ''
+        }
     })
 })
 </script>
