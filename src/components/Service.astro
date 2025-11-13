@@ -6,6 +6,12 @@ import protoIcon from '../assets/services/proto.svg'
 
 // import svgPinkStar from '../assets/pink-star.svg'
 
+const stats = [
+  { name: `Trailhead Points`, value: '65k+' },
+  { name: `Badges`, value: '76+' },
+  { name: `Superbadges`, value: '10+' },
+]
+
 const services = [
   {
      name: `Requirements Elicitation`,
@@ -47,30 +53,21 @@ const services = [
         </div>
       </div>
   
-      <div class="grid grid-cols-1 md:grid-cols-[50%_50%] border-t-2">
-        <div class="border-l-2 border-r-2 md:border-b-2 md:border-r-0 md:border-l-0">
-          <!-- Featured Trailhead Points Section -->
-          <div class="bg-linear-to-r from-blue-50 to-indigo-50 border-b-2 p-4 md:p-6 relative overflow-hidden">
-            <div class="absolute top-2 right-2 opacity-10">
-              <svg class="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
-              </svg>
+      <div class="grid grid-cols-1 md:grid-cols-[30%_70%] border-t-2">
+        <div class="flex flex-col border-l-2 border-r-2 md:border-b-2 md:border-r-0 md:border-l-0">
+          {stats.map(item => ( 
+            <div class="flex flex-col p-3 md:p-6  md:border-b-2 last:border-none">
+              <h1 class="text-2xl font-medium">{item.value}</h1>
+              <p class="text-sm">{item.name}</p>
             </div>
-            <div class="relative z-10">
-              <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-1">65k+</h1>
-              <p class="text-sm md:text-base font-medium text-blue-700">Trailhead Points</p>
-              <div class="mt-2 flex items-center">
-                <div class="h-1 bg-linear-to-r from-blue-500 to-indigo-500 rounded-full flex-1 max-w-16"></div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 border-r-2 border-t-2 md:border-r-0 md:border-t-0">
+        <div class="grid grid-cols-2 border-r-2 border-t-2 md:border-r-0 md:border-t-0">
           {services.map(item => ( 
-           <div class="flex flex-col gap-2 p-3 md:p-6 border-l-2 border-b-2">
-             <img src={item.icon.src} width="35" alt="" />
-             <h3 class="text-lg md:text-xl font-medium">{item.name}</h3>
-             <p class="text-sm md:text-base">{item.desc}</p>
+           <div class="flex flex-col gap-2 p-4 md:p-6 border-l-2 border-b-2">
+             <img src={item.icon.src} width="40" alt="" />
+             <h3 class="text-xl font-medium">{item.name}</h3>
+             <p>{item.desc}</p>
            </div>
           ))}
         </div>
