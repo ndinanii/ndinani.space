@@ -1,75 +1,140 @@
+# ndinani.space
 
-# Angie
+A Salesforce-focused portfolio showcasing data modeling, business analysis, and platform development expertise. Built with Astro for fast, modern web performance.
 
-ANGIE is a sleek Astro portfolio template built for creatives and developers. Featuring responsive layouts, customizable sections, and a bold brutalist design, it’s made to help you stand out and showcase your work with style.
+## 🚀 About
 
+This portfolio demonstrates my approach to Salesforce solution design and development, emphasizing:
+- **Requirements-driven development** - Understanding business needs before building
+- **Data integrity first** - Clean, trustworthy data foundations
+- **Clicks over code** - Leveraging declarative tools for maintainability
+- **Strategic thinking** - Every technical decision tied to business outcomes
 
+## 🛠️ Tech Stack
 
-![basics](./src/assets/demo/thumbnail.png)
+- **Framework:** [Astro](https://astro.build/) - Static site generation for optimal performance
+- **Styling:** [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Animations:** [GSAP](https://gsap.com/) - Professional-grade JavaScript animation
+- **Icons:** [Remix Icon](https://remixicon.com/) - Open-source icon system
+- **Image Optimization:** [Sharp](https://sharp.pixelplumbing.com/) - High-performance image processing
 
-
-### Dependencies used in this project:
-- [TailwindCSS](https://tailwindcss.com/)
-- [GSAP](https://gsap.com/)
-- [Remix Icon](https://remixicon.com/)
-
-### Credits:
-- [Pexels images](https://www.pexels.com/)
-- [Design inspo](https://www.figma.com/design/YHGwlMXQLVCE3mTF4JVA5I/2024-Portfolios-(Community)?node-id=1-914&t=6JAt4v8pqxzppZ0b-0)
-
-
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
-
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   ├── cloud-icon.svg
+│   └── cloud-weather.svg
 ├── src/
 │   ├── components/
-│   │   └── Bars.astro
-        └── Button.astro
-        └── CallToAction.astro
-        └── Footer.astro
-        └── Header.astro
-        └── Hero.astro
-        └── MarddownPost.astro
-        └── Reviews.astro
-        └── Service.astro
-        └── Tools.astro
-        └── Work.astro
+│   │   ├── Bars.astro
+│   │   ├── Button.astro
+│   │   ├── CallToAction.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── MarkdownPost.astro
+│   │   ├── Service.astro
+│   │   ├── Tools.astro
+│   │   └── Works.astro
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-        └── posts/
-        └── blog.astro
-        └── index.astro
-└── styles/
+│   ├── pages/
+│   │   ├── posts/
+│   │   │   ├── post-1.md (NextGen Electronics Case Study)
+│   │   │   ├── post-2.md
+│   │   │   └── post-3.md
+│   │   ├── blog.astro
+│   │   └── index.astro
+│   ├── styles/
+│   │   └── global.css
+│   └── sample.ts (Site configuration)
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+Run these commands from the project root:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
+| `npm install`             | Install dependencies                            |
+| `npm run dev`             | Start local dev server at `localhost:4321`      |
+| `npm run build`           | Build production site to `./dist/`              |
+| `npm run preview`         | Preview production build locally                |
+| `npm audit`               | Check for security vulnerabilities              |
 
+## 🔧 Customization
 
+### Update Personal Information
+Edit `src/sample.ts` to configure:
+- Social media links (LinkedIn, GitHub, YouTube, Instagram)
+- Email contact
+- Display name and nickname
 
-## 👀 Curious to Explore More?
+### Add Case Studies
+1. Create new `.md` file in `src/pages/posts/`
+2. Follow the frontmatter structure from `post-1.md`
+3. Add project details and GitHub link
 
-Check out [LAB-CH3](https://github.com/LaB-CH3) for a growing collection of current and future templates. 
+### Modify Skills/Tools
+Edit `src/components/Tools.astro` to update the animated skills banner
 
-If you’ve found this helpful, consider fueling my creativity!  
-[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/d2OuR1c)
+### Customize Development Process
+Edit `src/components/Service.astro` to update the methodology section
+
+## 🎨 Design Philosophy
+
+This portfolio emphasizes **clarity over complexity**:
+- Clean, brutalist design aesthetic
+- Focus on content and case studies
+- Mobile-responsive layouts
+- Fast load times with image optimization
+- Accessibility-first approach
+
+## 📊 Features
+
+- **Case Studies Section**: Detailed project breakdowns with strategic insights
+- **Skills Animation**: Scrolling banner showcasing technical competencies
+- **Development Process**: Visual representation of methodology
+- **Trailhead Stats**: Salesforce certification and badge achievements
+- **Contact Integration**: Direct email and social media links
+
+## 🔒 Security
+
+- No API keys or secrets in codebase
+- Email links use `mailto:` protocol (no exposed plain text scrapers can abuse)
+- Google Drive resume link (shareable, not downloadable without permission)
+- No personally identifiable information beyond public profiles
+- Dependencies regularly audited with `npm audit`
+
+## 🙏 Credits
+
+**Original Template:** [Angie by LAB-CH3](https://github.com/anthonylan/angie)
+- Design inspiration and component structure
+- Brutalist aesthetic foundation
+
+**Assets:**
+- Stock images from [Pexels](https://www.pexels.com/)
+- Cloud icons from [SVG Repo](https://www.svgrepo.com/)
+
+**Customization by:** Ndinani Myendeki
+- Salesforce-focused content and case studies
+- Strategic methodology documentation
+- Technical skill showcases
+
+## 📝 License
+
+This project is based on the Angie template. Please refer to the original repository for licensing information.
+
+## 🔗 Connect
+
+- **LinkedIn:** [ndinani-myendeki](https://www.linkedin.com/in/ndinani-myendeki/)
+- **GitHub:** [ndinanii](https://github.com/ndinanii)
+- **YouTube:** [@ndinani_myendeki](https://www.youtube.com/@ndinani_myendeki)
+- **Email:** wn.myendeki@gmail.com
+
+---
+
+*Building intuitive, Salesforce platform systems with legal rigor and a 'clicks-as-code' mindset.*
 

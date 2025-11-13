@@ -1,20 +1,20 @@
 ---
 import logoStar from '../assets/logo-star.svg'
-import svgPinkStar from '../assets/pink-star.svg'
+// import svgPinkStar from '../assets/pink-star.svg'
 import { author, buy } from '../sample'
 
 const links = [
-    { name: 'About', path: '/', target: '_self' },
-    { name: 'Blog', path: '/blog/', target: '_self' },
-    { name: 'Hire Me', path: '/#', target: '_self' },
+    { name: 'My Resume', path: 'https://drive.google.com/file/d/133FaT3fq4UyU8Y0Pt_ovSrcYd4y9ucAF/view?usp=sharing', target: '_blank' },
+    { name: 'Case Studies', path: '/blog/', target: '_self' },
+    { name: 'Hire Me', path: 'mailto:wn.myendeki@gmail.com', target: '_self' },
 ]
 
 const { pathname } = Astro.url
 ---
 
 <header class="relative border-b-3 p-7 overflow-hidden">
-    <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -right-9 -top-4" />
-    <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -left-8 -bottom-5 hidden md:block" />
+    <img src="/cloud-icon.svg" alt="cloud" width="80" class="absolute -right-9 -top-4" />
+    <img src="/cloud-icon.svg" alt="cloud" width="80" class="absolute -left-8 -bottom-5 hidden md:block" />
 
 
     <div class="flex border-3 border-black bg-white max-w-[310px] md:max-w-xl m-auto relative z-10">
@@ -48,7 +48,7 @@ const { pathname } = Astro.url
     </div>
   </header>
 
-  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-[100%]" id="menu-content">
+  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-full" id="menu-content">
     <div class="flex p-6">
         <h3 class="flex-1 font-bold uppercase">Menu</h3>
         <a href="#" id="menu-close">               

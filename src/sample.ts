@@ -1,17 +1,18 @@
 const author = {
-    name: `Angela`,
-    nickname: `angie`,
-    tiktok: `https://www.tiktok.com/@codetonero`,
-    ig: `https://www.instagram.com/codetonero/`,
-    x: `https://x.com/codetonero`,
-    email: 'mailto:anthonylannn@gmail.com'
+    name: `NDINANI`,
+    nickname: `ndinani`,
+    youtube: `https://www.youtube.com/@ndinani_myendeki`,
+    ig: `https://www.instagram.com/ndinani_myendeki/`,
+    linkedin: `https://www.linkedin.com/in/ndinani-myendeki/`,
+    github: `https://github.com/ndinanii`,
+    email: 'mailto:wn.myendeki@gmail.com'
 
 }
 
 
 const buy = {
-    title: `See on Github`,
-    link: `https://github.com/anthonylan/angie`
+    title: `Contact`,
+    link: `mailto:wn.myendeki@gmail.com`
 }
 
 

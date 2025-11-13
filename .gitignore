@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Personal information and documents
+my profile info/
+*.pdf
+*.docx
+*.doc
+*.jpg
+

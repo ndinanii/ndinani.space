@@ -6,19 +6,24 @@ import arrowCard from '../assets/arrow-card.svg'
 
 const portfolio = [
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    name: 'NextGen Electronics: Lead-to-Revenue Management', 
+    desc: `Data Modeling - Lead Management - Salesforce Configuration`,
+    cover: `https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`,
+    link: `https://github.com/ndinanii/salesforce-nextgen-lead-management`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
+    name: 'Case Study 2', 
+    desc: `Coming Soon`,
     cover: `https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&w=1600`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
+    name: 'Case Study 3', 
+    desc: `Coming Soon`,
     cover: `https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=1600`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
+    name: 'Case Study 4', 
+    desc: `Coming Soon`,
     cover: `https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1600`
   },
 ]
@@ -33,7 +38,7 @@ const portfolio = [
   
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
       {portfolio.map(item => ( 
-        <a href="#" class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+        <a href={item.link || '#'} target={item.link ? '_blank' : '_self'} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
           <div class="w-full h-[200px] overflow-hidden border-2">
            <img src={item.cover} alt="" class="w-full h-full object-cover" />
           </div>

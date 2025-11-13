@@ -2,12 +2,10 @@
 import Button from "./Button.astro"
 import Bars from "./Bars.astro"
 
-import svgheroContent from '../assets/hero-content.svg'
 import svgRedStar from '../assets/red-star.svg'
 import svgIdea from '../assets/idea.svg'
 import svgArrow from '../assets/arrow.svg'
 
-import svgPinkStar from '../assets/pink-star.svg'
 import svgString from '../assets/string.svg'
 
 import { author, buy } from '../sample'
@@ -19,16 +17,11 @@ import { author, buy } from '../sample'
     <div class="max-w-4xl mx-auto p-4 pt-20 md:pt-30">
       <div class="grid grid-cols-1 md:grid-cols-[60%_40%] items-center">
         <div class="flex flex-col gap-4 pr-0 md:pr-10">
-          <img src={svgheroContent.src} alt="logo" width="80" />
 
             <h1 class="text-5xl font-medium">
-              <span>I build top <br> notch</span>
-              <span class="relative">
-                <span class="absolute bg-[var(--yellow)] w-full h-[50%] left-0 bottom-0 z-1"></span>
-                <span class="relative z-5">websites</span>
-              </span>
+              <span>I build intuitive, <br> Salesforce platform systems</span>
             </h1>
-            <p class="text-xl">Passionate UX Engineer & Designer crafting intuitive, user-centered experiences.</p>
+            <p class="text-xl">Creative Systems Analyst applying legal rigor and a 'clicks-as-code' mindset to digital transformation.</p>
            <div class="flex mt-5">
              <Button text="See portfolio" link="/#work" target="_self" />
            </div>
@@ -48,12 +41,12 @@ import { author, buy } from '../sample'
             <img src={svgArrow.src} width="80" class="-translate-x-10" alt="arrow icon" />
           </div>
 
-          <div class="relative p-8 bg-white">
-            <img src={svgRedStar.src} width="80" alt="red-star" class="absolute bottom-1 right-1 z-10" />
-            <img src={svgIdea.src} width="60" alt="idea" class="absolute top-16 -left-3 z-10" />   
-            <img src={svgString.src} width="50" alt="string" class="absolute -top-6 -right-2 z-10" />             
+          <div class="relative p-6 bg-white">
+            <img src="/cloud-weather.svg" width="50" alt="cloud" class="absolute bottom-1 right-1 z-10" />
+            <img src="/cloud-weather.svg" width="40" alt="cloud" class="absolute top-12 -left-2 z-10" />   
+            <img src="/cloud-weather.svg" width="35" alt="cloud" class="absolute -top-4 -right-2 z-10" />             
           
-             <div id="me" class="w-full h-[310px] border-2"></div>
+             <div id="me" class="w-full h-[260px] border-2"></div>
              <Bars />
           </div>
         </div>
@@ -61,14 +54,14 @@ import { author, buy } from '../sample'
       </div>
     </div>
 
-    <img src={svgPinkStar.src} alt="start" width="50" class="absolute -bottom-4" />
+    <img src="/cloud-icon.svg" alt="cloud" width="50" class="absolute -bottom-4" />
   </section>
 
 
   <style>
     #me{
-     background-image: url('https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-     background-position: top;
+     background-image: url('/profile.jpg');
+     background-position: center;
      background-size: cover;
     }
    </style>

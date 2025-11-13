@@ -1,27 +1,30 @@
 ---
 layout: ../../components/MarkdownPost.astro
-title: "The Looming Economic Catastrophe: China on the Brink of Collapse"
+title: "Case Study Title 2"
 author: 
-  name: "Kostya Jarvis"
-  url: "https://images.pexels.com/photos/28368876/pexels-photo-28368876/free-photo-of-a-man-in-black-sitting-on-a-red-couch.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  name: "NDINANI"
+  url: "https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 image:
-  url: "https://images.pexels.com/photos/7693240/pexels-photo-7693240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  alt: "xx"
-tags: [""]
-pubDate: 'Oct 15, 2025'
-likes: '6.3k'
-comments: '49'
+  url: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  alt: "Case Study"
+tags: ["Salesforce"]
+pubDate: 'Coming Soon'
+likes: '0'
+comments: '0'
 ---
 
+## Project Overview
 
-Look around at social media, politics, or the news and you’re likely to agree with the bodybuilding champ-turned-movie star-turned-governor of California.
+Case study content coming soon...
 
+## Challenge
 
-Whether he was lifting weights for five hours a day or trying to hack a path through the thicket of California politics, Schwarzenegger claims he was consistently happy. What allowed him to maintain a positive outlook despite personal setbacks and tough jobs? In his book Be Useful, Schwarzenegger boils down his philosophy to just four words.
+Description of the business challenge...
 
+## Solution
 
-You might think a simple mantra is too flimsy a thing to be actually meaningful in the face of real-life struggle. But according to top psychologists, the Governator actually manages to capture profound truths about human flourishing in one quick motto.
+How the Salesforce solution was implemented...
 
+## Results
 
-
-
+Measurable outcomes and impact...

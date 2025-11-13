@@ -3,9 +3,10 @@ import logoStar from '../assets/logo-star.svg'
 import { author } from '../sample'
 
 const socials = [
-  { icon: 'ri-tiktok-fill', link: author.tiktok },
+  { icon: 'ri-youtube-fill', link: author.youtube },
 	{ icon: 'ri-instagram-line', link: author.ig },
-  { icon: 'ri-twitter-x-line', link: author.x },
+  { icon: 'ri-linkedin-fill', link: author.linkedin },
+  { icon: 'ri-github-fill', link: author.github },
 ]
 
 ---
@@ -22,7 +23,7 @@ const socials = [
       </div>
       <div class="flex md:justify-end gap-5">
         {socials.map(item => ( 
-          <a href={item.link} target="_blank" class="transition-all duration-200 hover:translate-y-[2px]"><i class={`${item.icon} text-2xl`}></i></a>
+          <a href={item.link} target="_blank" class="transition-all duration-200 hover:translate-y-0.5"><i class={`${item.icon} text-2xl`}></i></a>
         ))}
       </div>
     </div>
