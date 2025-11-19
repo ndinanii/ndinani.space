@@ -3,124 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import AppHeader from '../components/Header.astro';
 import AppFooter from '../components/Footer.astro';
 import CallToAction from '../components/CallToAction.astro';
-import { Image } from 'astro:assets';
-
-const timeline = [
-    {
-        year: 'The Beginning',
-        title: 'Curiosity Sparked',
-        description: 'My journey didn\'t start with code, but with a curiosity about how things work. I\'ve always been a problem solver at heart, looking for efficient ways to tackle challenges.',
-        icon: 'ri-lightbulb-flash-line'
-    },
-    {
-        year: 'The Learning Phase',
-        title: 'Diving into Salesforce',
-        description: 'Discovering the Salesforce ecosystem was a turning point. I realized that technology could be a powerful enabler for business success. I dedicated myself to mastering the platform, from Admin basics to complex Development.',
-        icon: 'ri-book-open-line'
-    },
-    {
-        year: 'The Builder',
-        title: 'Creating Solutions',
-        description: 'Theory wasn\'t enough. I started building real-world projects—like the Lead Management system and the Account Console—to prove my skills and solve actual business problems.',
-        icon: 'ri-hammer-line'
-    },
-    {
-        year: 'Now',
-        title: 'Ready for Impact',
-        description: 'Today, I stand as a Salesforce Developer ready to bring strategic thinking and technical excellence to a forward-thinking team. I\'m not just looking for a job; I\'m looking for a place to make a difference.',
-        icon: 'ri-rocket-line'
-    }
-];
 ---
 
 <Layout>
     <AppHeader />
 
-    <main class="max-w-4xl mx-auto px-4 py-12">
-        <!-- Hero Section -->
-        <section class="mb-20 text-center">
+    <main class="max-w-4xl mx-auto px-4 py-12 min-h-[60vh]">
+        
+        <section class="mb-12">
             <div class="inline-block bg-[var(--yellow)] border-2 border-black px-4 py-1 font-bold mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                MY STORY
+                ABOUT ME
             </div>
-            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
-                More Than Just <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Code & Config</span>
+            <h1 class="text-5xl font-black mb-6">
+                <!-- Title goes here -->
             </h1>
-            <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                I'm a Salesforce Developer with a strategist's mind. Here's how I got here.
-            </p>
         </section>
 
-        <!-- Story Timeline -->
-        <section class="relative mb-24">
-            <!-- Vertical Line -->
-            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-black transform md:-translate-x-1/2"></div>
-
-            <div class="flex flex-col gap-12">
-                {timeline.map((item, index) => (
-                    <div class={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                        
-                        <!-- Content Side -->
-                        <div class="flex-1 w-full md:w-1/2 pl-12 md:pl-0">
-                            <div class={`bg-white border-3 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 relative ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                                <span class="inline-block bg-black text-white text-sm font-bold px-2 py-1 mb-3">
-                                    {item.year}
-                                </span>
-                                <h3 class="text-2xl font-bold mb-3">{item.title}</h3>
-                                <p class="text-gray-600 leading-relaxed">
-                                    {item.description}
-                                </p>
-                                
-                                <!-- Arrow pointing to center -->
-                                <div class={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-t-3 border-r-3 border-black transform rotate-45 ${index % 2 === 0 ? '-left-2.5 border-t-0 border-r-0 border-b-3 border-l-3' : '-right-2.5'}`}></div>
-                            </div>
-                        </div>
-
-                        <!-- Center Icon -->
-                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-[var(--yellow)] border-3 border-black rounded-full z-10">
-                            <i class={`${item.icon} text-xl`}></i>
-                        </div>
-
-                        <!-- Empty Side for Balance -->
-                        <div class="hidden md:block flex-1 w-1/2"></div>
-                    </div>
-                ))}
-            </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section class="bg-white border-3 border-black p-8 md:p-12 mb-20 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[var(--blue)] rounded-bl-full border-l-3 border-b-3 border-black -mr-1 -mt-1 z-0"></div>
-            
-            <div class="relative z-10">
-                <h2 class="text-4xl font-black mb-8">My Philosophy</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
-                            <i class="ri-focus-3-line text-2xl"></i> User-Centric
-                        </h3>
-                        <p class="text-gray-600">I don't just build what's asked; I build what's needed. Understanding the user's workflow is step one.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
-                            <i class="ri-shield-check-line text-2xl"></i> Data Integrity
-                        </h3>
-                        <p class="text-gray-600">Garbage in, garbage out. I prioritize validation and clean architecture to ensure reliable data.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
-                            <i class="ri-code-s-slash-line text-2xl"></i> Clean Code
-                        </h3>
-                        <p class="text-gray-600">Code is read more often than it's written. I write maintainable, self-documenting solutions.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
-                            <i class="ri-infinite-loop-line text-2xl"></i> Continuous Learning
-                        </h3>
-                        <p class="text-gray-600">The tech landscape never stops changing, and neither do I. I'm always exploring new tools and best practices.</p>
-                    </div>
-                </div>
-            </div>
+        <section class="bg-white border-3 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] min-h-[200px]">
+            <!-- Content goes here -->
         </section>
 
     </main>
