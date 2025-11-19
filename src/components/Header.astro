@@ -39,7 +39,7 @@ const { pathname } = Astro.url
             <ul class="hidden md:flex">
                 {links.map(item => ( 
                     <li class="border-l-2 border-black p-3 py-4">
-                        <a href={item.path} target={item.target} class="whitespace-nowrap relative flex items-center before:absolute before:left-0 before:bottom-1 before:h-[8px] before:w-0 before:bg-[var(--yellow)] before:transition-all before:duration-300 hover:before:w-full">
+                        <a href={item.path} target={item.target} class="nav-link whitespace-nowrap relative flex items-center">
                             <span class="relative z-5">{item.name} {pathname == item.path ? '//' : ''}</span>
                         </a>
                     </li>
@@ -49,7 +49,26 @@ const { pathname } = Astro.url
     </div>
   </header>
 
-  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-[100%]" id="menu-content">
+  <style>
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        height: 8px;
+        width: 0;
+        background-color: var(--yellow);
+        transition: width 300ms ease;
+    }
+    .nav-link:hover::before {
+        width: 100%;
+    }
+  </style>
+
+  <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-full" id="menu-content">
     <div class="flex p-6">
         <h3 class="flex-1 font-bold uppercase">Menu</h3>
         <a href="#" id="menu-close">               
@@ -77,18 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     menuOpen?.addEventListener('click', (e) => {
         e.preventDefault()
-        menuContent?.classList.remove('-translate-x-[100%]')
+        menuContent?.classList.remove('-translate-x-full')
     })
 
     menuClose?.addEventListener('click', (e) => {
         e.preventDefault()
-        menuContent?.classList.add('-translate-x-[100%]')
+        menuContent?.classList.add('-translate-x-full')
     })
 
 
     menuContent?.querySelectorAll('li a').forEach(item => {
         item.addEventListener('click', (e) => {
-            menuContent?.classList.add('-translate-x-[100%]')
+            menuContent?.classList.add('-translate-x-full')
         })
     })
 })
