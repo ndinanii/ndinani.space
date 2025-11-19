@@ -20,6 +20,9 @@ const { frontmatter } = Astro.props;
 
 <section class="mb-30 p-3">
     <div class="max-w-3xl mx-auto p-3 bg-white flex flex-col gap-7 border-3 mt-10">
+        <a href="/blog/" class="inline-flex items-center gap-2 font-bold hover:text-[var(--yellow)] transition-colors w-fit">
+            <i class="ri-arrow-left-line"></i> Back to Case Studies
+        </a>
         <Image src={frontmatter.image.url} alt="Head" width={100} height={100} class="w-full border-2" />
         <h1 class="title text-4xl font-black">{frontmatter.title}</h1>
 
