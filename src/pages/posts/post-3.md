@@ -1,6 +1,6 @@
 ---
 layout: ../../components/MarkdownPost.astro
-title: "Case Study Title 3"
+title: "Case Study 3"
 author: 
   name: "NDINANI"
   url: "https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -13,11 +13,9 @@ likes: '0'
 comments: '0'
 ---
 
-## Project Overview
+## Coming Soon
 
-Case study content coming soon...
-
-## Challenge
+This case study is currently being prepared. Check back soon!
 
 Description of the business challenge...
 

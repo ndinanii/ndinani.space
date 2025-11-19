@@ -30,3 +30,7 @@ my profile info/
 *.doc
 *.jpg
 
+# Salesforce DX (shouldn't be in this project)
+.sfdx/
+.sf/
+.salesforce/
