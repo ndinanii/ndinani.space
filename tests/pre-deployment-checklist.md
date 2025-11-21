@@ -200,7 +200,7 @@
 
 ### Next Steps:
 1. ✅ Build completed successfully
-2. ⏭️ Deploy dist/ folder to hosting (Netlify/Vercel/GitHub Pages)
+2. ⏭️ Deploy dist/ folder to hosting (Vercel/GitHub Pages)
 3. ⏭️ Run manual browser tests post-deployment
 4. ⏭️ Run Lighthouse audit on live URL
 5. ⏭️ Verify all external links (Google Drive, GitHub)
@@ -212,4 +212,4 @@
 
 **Tested By:** GitHub Copilot  
 **Approved For:** Production Deployment  
-**Deployment Platform Recommendations:** Netlify, Vercel, GitHub Pages
+**Deployment Platform Recommendations:** Vercel, GitHub Pages

@@ -6,41 +6,6 @@
 
 ## Deployment Options
 
-### Option 1: Netlify (Recommended)
-**Pros:** Free tier, automatic builds, easy setup, custom domain support
-
-#### Steps:
-1. Push code to GitHub repository
-   ```powershell
-   git init
-   git add .
-   git commit -m "Initial commit: Salesforce portfolio"
-   git remote add origin https://github.com/ndinanii/ndinani.space.git
-   git push -u origin main
-   ```
-
-2. Connect to Netlify
-   - Go to https://app.netlify.com/
-   - Click "Add new site" > "Import an existing project"
-   - Connect to GitHub and select your repository
-
-3. Configure build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-   - **Node version:** 18 or higher
-
-4. Deploy
-   - Click "Deploy site"
-   - Wait for build to complete
-   - Your site will be live at `[random-name].netlify.app`
-
-5. Custom domain (optional)
-   - Go to "Domain settings"
-   - Add custom domain: `ndinani.space`
-   - Follow DNS configuration instructions
-
----
-
 ### Option 2: Vercel
 **Pros:** Excellent performance, automatic previews, free tier
 
@@ -206,10 +171,6 @@
 
 For this project, no environment variables are required. However, if you add analytics or third-party services later:
 
-### Netlify:
-- Go to Site settings > Environment variables
-- Add key-value pairs
-
 ### Vercel:
 - Go to Project settings > Environment Variables
 - Add variables for Production
@@ -228,17 +189,6 @@ For this project, no environment variables are required. However, if you add ana
 
 2. **Configure DNS records:**
    
-   For Netlify:
-   ```
-   Type: A
-   Name: @
-   Value: 75.2.60.5
-   
-   Type: CNAME
-   Name: www
-   Value: [your-site].netlify.app
-   ```
-
    For Vercel:
    ```
    Type: A
@@ -251,7 +201,7 @@ For this project, no environment variables are required. However, if you add ana
    ```
 
 3. **SSL Certificate:**
-   - Netlify & Vercel provide free auto-renewing SSL
+   - Vercel provides free auto-renewing SSL
    - Will be active within minutes after DNS propagation
 
 ---
@@ -305,20 +255,6 @@ Once connected to GitHub:
 
 ---
 
-## Recommended: Netlify Deployment
-
-**Why Netlify?**
-- Easiest setup for Astro projects
-- Excellent free tier
-- Automatic HTTPS
-- Built-in form handling (for contact forms)
-- Great performance
-
-**Expected deployment time:** 2-5 minutes  
-**Cost:** Free (with generous limits)
-
----
-
 ## Next Steps After Deployment
 
 1. ✅ Deploy to chosen platform
@@ -331,5 +267,5 @@ Once connected to GitHub:
 ---
 
 **Deployment Status:** Ready for production  
-**Recommended Platform:** Netlify or Vercel  
+**Recommended Platform:** Vercel or GitHub Pages  
 **Estimated Setup Time:** 10-15 minutes
