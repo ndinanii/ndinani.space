@@ -4,35 +4,97 @@ import Layout from "../layouts/Layout.astro";
 
 import AppHeader from '../components/Header.astro';
 import AppFooter from '../components/Footer.astro';
+
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 
+// Sort posts by date (newest first)
+const sortedPosts = allPosts.sort((a: any, b: any) => 
+  new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+);
 ---
-
 
 <Layout>
     <AppHeader />
     
-    <section class="py-40">
-        <div class="max-w-3xl mx-auto">
-          <div class="text-center mb-15">
-            <h1 class="title text-5xl font-black">Case Studies</h1>
-          </div>
-          <div class="p-3">
-            {allPosts.map(({url, frontmatter, rawContent }: any) => 
-               <a href={url} class="flex gap-3 items-center bg-white p-5 border-2 mb-5 transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-                <div>
-                  <div class="w-[200px] h-[130px] overflow-hidden border-2">
-                  <img src={frontmatter?.image?.url} alt="" class="w-full h-full object-cover" />
+    <main class="min-h-screen py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <header class="mb-12 sm:mb-16 lg:mb-20">
+                <h1 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    Case Studies
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    A collection of projects, insights, and learnings from my journey.
+                </p>
+            </header>
+
+            <!-- Posts Grid -->
+            <div class="space-y-8 sm:space-y-12">
+                {sortedPosts.map(({url, frontmatter}: any) => {
+                    const publishedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    return (
+                        <article class="group">
+                            <a href={url} class="block">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center">
+                                    {/* Image */}
+                                    <div class="md:col-span-1">
+                                        <div class="aspect-video overflow-hidden rounded-lg">
+                                            <img 
+                                                src={frontmatter?.image?.url} 
+                                                alt={frontmatter?.image?.alt || frontmatter.title}
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Content */}
+                                    <div class="md:col-span-2">
+                                        <div class="space-y-3">
+                                            <time class="text-sm text-gray-500">
+                                                {publishedDate}
+                                            </time>
+                                            
+                                            <h2 class="text-2xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
+                                                {frontmatter.title}
+                                            </h2>
+                                            
+                                            {frontmatter.excerpt && (
+                                                <p class="text-gray-600 leading-relaxed line-clamp-3">
+                                                    {frontmatter.excerpt}
+                                                </p>
+                                            )}
+                                            
+                                            {frontmatter.tags && (
+                                                <div class="flex flex-wrap gap-2 pt-2">
+                                                    {frontmatter.tags.slice(0, 3).map((tag: string) => (
+                                                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    );
+                })}
+            </div>
+
+            {allPosts.length === 0 && (
+                <div class="text-center py-16">
+                    <p class="text-gray-500 text-lg">No case studies published yet.</p>
                 </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <h1 class="line-clamp-2 text-xl font-bold">{frontmatter.title}</h1>
-                </div>
-               </a>
-             )}
-          </div>
+            )}
         </div>
-    </section>
+    </main>
 
     <AppFooter />
 </Layout>
