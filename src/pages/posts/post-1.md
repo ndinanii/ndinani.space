@@ -98,12 +98,11 @@ I leveraged the power of the Standard Object Architecture to ensure long-term sc
 I adopted a "Declarative First, Code for Experience" mindset. I used the right tool for the right job to maximize maintainability.
 
 ### The Tech Stack
-| Component | Tool Used | Purpose |
-|-----------|-----------|---------|
-| Backend Logic | Salesforce Flow | Handles the "Traffic Cop" logic for task creation (Scalable & Agnostic) |
-| Data Integrity | Validation Rules | Enforces business logic at the database level |
-| User Interface | Lightning Web Components (LWC) | Delivers a bespoke, high-performance experience where standard UI fell short |
-| Controller Layer | Apex | Handles complex aggregations (ROI calculations) and dynamic status logic (LeadActionController) |
+
+Backend Logic -> Salesforce Flow -> Handles the "Traffic Cop" logic for task creation (Scalable & Agnostic) 
+Data Integrity -> Validation Rules -> Enforces business logic at the database level 
+User Interface -> Lightning Web Components (LWC) -> Delivers a bespoke, high-performance experience where standard UI fell short 
+Controller Layer -> Apex Handles complex aggregations (ROI calculations) and dynamic status logic (LeadActionController) 
 
 ### Key Code Highlights
 - **Scalability**: The Flow logic uses a decision element to distinguish between API injections, Web-to-Lead, and Manual entry
