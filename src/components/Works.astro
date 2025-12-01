@@ -7,25 +7,30 @@ import arrowCard from '../assets/arrow-card.svg'
 const portfolio = [
   { 
     name: 'NextGen Electronics: Lead-to-Revenue Management', 
-    desc: `Data Modeling - Lead Management - Salesforce Configuration`,
+    desc: `Lead management process to solve "lead-leakage."`,
     cover: `https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`,
     link: `https://github.com/ndinanii/salesforce-nextgen-lead-management`
   },
   { 
-    name: 'Case Study 2', 
-    desc: `Coming Soon`,
-    cover: `https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&w=1600`
+    name: 'Tech-Co Account Console', 
+    desc: `Solution to transform Account Manager workflows from fragmented to unified`,
+    cover: `https://images.pexels.com/photos/8062366/pexels-photo-8062366.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+    link: `https://github.com/ndinanii/salesforce-techco-account-console`
   },
   { 
-    name: 'Case Study 3', 
-    desc: `Coming Soon`,
-    cover: `https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=1600`
+    name: 'Brighttech', 
+    desc: `Solution that delives a user-centric "mission control" app in Salesforce.`,
+    cover: `https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+    link: `https://github.com/ndinanii/salesforce-brighttech-performance-app`
   },
-  { 
-    name: 'Case Study 4', 
-    desc: `Coming Soon`,
-    cover: `https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1600`
-  },
+  
+{
+    name: 'Intergalactic Freight & Trade Corp', 
+    desc: `A comprehensive freight management application built on Salesforce with a modern fullstack architecture.`,
+    cover: `https://images.pexels.com/photos/34995630/pexels-photo-34995630.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+    link: `https://github.com/ndinanii/salesforce-intergalactic-freight-app`
+},
+    
 ]
 ---
 
@@ -38,9 +43,9 @@ const portfolio = [
   
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
       {portfolio.map(item => ( 
-        <a href={item.link || '#'} target={item.link ? '_blank' : '_self'} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+        <a href={item.link} target={item.link !== '#' ? '_blank' : '_self'} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)] cursor-pointer">
           <div class="w-full h-[200px] overflow-hidden border-2">
-           <img src={item.cover} alt="" class="w-full h-full object-cover" />
+           <img src={item.cover} alt={item.name} class="w-full h-full object-cover" />
           </div>
           <div class="space-y-1 pt-4">
             <div class="flex pr-2">
